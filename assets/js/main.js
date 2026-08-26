@@ -307,25 +307,42 @@ function initTreatmentAccordion() {
   if (!items.length) return;
 
   items.forEach(item => {
-    item.addEventListener('click', () => {
+    // Remover tabindex do item inteiro — o clique no título é suficiente
+    const content = $('.treatment-item__content', item);
+    if (content) {
+      content.setAttribute('role', 'button');
+      content.setAttribute('tabindex', '0');
+      content.setAttribute('aria-expanded', 'false');
+    }
+
+    function toggle(e) {
+      // Ignorar se o evento veio de um link dentro do item
+      if (e.target.closest('a')) return;
+
       const isOpen = item.classList.contains('is-open');
 
       // Fechar todos os outros
       items.forEach(other => {
-        if (other !== item) other.classList.remove('is-open');
+        if (other !== item) {
+          other.classList.remove('is-open');
+          const otherContent = $('.treatment-item__content', other);
+          if (otherContent) otherContent.setAttribute('aria-expanded', 'false');
+        }
       });
 
-      // Alternar o atual
       item.classList.toggle('is-open', !isOpen);
-    });
+      if (content) content.setAttribute('aria-expanded', String(!isOpen));
+    }
 
-    // Acessibilidade: teclado
-    item.setAttribute('tabindex', '0');
-    item.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        item.click();
-      }
-    });
+    // Usar apenas o content como área clicável, não o item inteiro
+    if (content) {
+      content.addEventListener('click', toggle);
+      content.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggle(e);
+        }
+      });
+    }
   });
 }
