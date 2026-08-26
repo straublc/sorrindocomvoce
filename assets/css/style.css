@@ -1190,6 +1190,8 @@ address { font-style: normal; }
 
 .faq__header {
   margin-bottom: var(--space-12);
+  max-width: 760px;
+  margin-inline: auto;
 }
 
 .faq__heading {
@@ -1205,6 +1207,8 @@ address { font-style: normal; }
   display: flex;
   flex-direction: column;
   max-width: 760px;
+  margin-inline: auto;
+  width: 100%;
 }
 
 .faq__item {
