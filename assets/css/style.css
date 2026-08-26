@@ -81,10 +81,14 @@
 }
 
 /* ── 02. RESET & BASE ───────────────────────────────────────── */
-*, *::before, *::after {
+/* Proteção global contra overflow horizontal */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  min-width: 0; /* evita que flex/grid items forcem a largura */
 }
 
 html {
@@ -92,6 +96,7 @@ html {
   scroll-padding-top: var(--header-height-mobile);
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -103,6 +108,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  max-width: 100%;
 }
 
 /* Texto justificado */
@@ -170,6 +176,7 @@ address { font-style: normal; }
   max-width: var(--container-max);
   margin-inline: auto;
   padding-inline: var(--container-pad);
+  overflow-x: hidden;
 }
 
 /* ── 05. BOTÕES ─────────────────────────────────────────────── */
@@ -462,6 +469,7 @@ address { font-style: normal; }
   background-color: var(--color-bg);
   overflow: hidden;
   position: relative;
+  width: 100%;
 }
 
 .hero__rating {
@@ -551,7 +559,9 @@ address { font-style: normal; }
 .hero__media {
   position: relative;
   width: 100%;
+  max-width: 100%;
   aspect-ratio: 4/3;
+  overflow: hidden;
 }
 
 .hero__image-primary {
@@ -1002,6 +1012,8 @@ address { font-style: normal; }
 .testimonials__track-wrapper {
   position: relative;
   overflow: hidden;
+  width: 100%;
+  max-width: 100%;
 }
 .testimonials__track {
   display: flex;
