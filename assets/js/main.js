@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavHighlight();
   initCurrentYear();
   initTreatmentAccordion();
+  initFaq();
 });
 
 /* ── HEADER ─────────────────────────────────────────────────── */
@@ -299,6 +300,85 @@ function initNavHighlight() {
 function initCurrentYear() {
   const el = $('#currentYear');
   if (el) el.textContent = new Date().getFullYear();
+}
+
+/* ── FAQ ACCORDION ──────────────────────────────────────────── */
+function initFaq() {
+  const btns = $$('.faq__btn');
+  if (!btns.length) return;
+
+  btns.forEach(btn => {
+    const answerId = btn.getAttribute('aria-controls');
+    const answer   = document.getElementById(answerId);
+    if (!answer) return;
+
+    btn.addEventListener('click', () => {
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+      // Fechar todos os outros primeiro
+      btns.forEach(other => {
+        if (other === btn) return;
+        if (other.getAttribute('aria-expanded') !== 'true') return;
+        const otherId = other.getAttribute('aria-controls');
+        const otherAnswer = document.getElementById(otherId);
+        other.setAttribute('aria-expanded', 'false');
+        if (otherAnswer) collapse(otherAnswer);
+      });
+
+      if (isOpen) {
+        btn.setAttribute('aria-expanded', 'false');
+        collapse(answer);
+      } else {
+        btn.setAttribute('aria-expanded', 'true');
+        expand(answer);
+      }
+    });
+  });
+
+  function expand(el) {
+    // 1. Tornar visível mas ainda com height 0
+    el.removeAttribute('hidden');
+    el.style.overflow = 'hidden';
+    el.style.height   = '0px';
+
+    // 2. Dois rAF para garantir que o browser fez reflow antes de ler scrollHeight
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        const h = el.scrollHeight;
+        el.style.transition = 'height 380ms cubic-bezier(0.16, 1, 0.3, 1)';
+        el.style.height = h + 'px';
+
+        el.addEventListener('transitionend', function done() {
+          el.style.height    = '';
+          el.style.overflow  = '';
+          el.style.transition = '';
+          el.removeEventListener('transitionend', done);
+        }, { once: true });
+      });
+    });
+  }
+
+  function collapse(el) {
+    // 1. Fixar a altura atual antes de animar para 0
+    el.style.height    = el.scrollHeight + 'px';
+    el.style.overflow  = 'hidden';
+    el.style.transition = '';
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        el.style.transition = 'height 300ms cubic-bezier(0.4, 0, 0.2, 1)';
+        el.style.height = '0px';
+
+        el.addEventListener('transitionend', function done() {
+          el.setAttribute('hidden', '');
+          el.style.height    = '';
+          el.style.overflow  = '';
+          el.style.transition = '';
+          el.removeEventListener('transitionend', done);
+        }, { once: true });
+      });
+    });
+  }
 }
 
 /* ── TREATMENT ACCORDION (touch + click) ───────────────────── */

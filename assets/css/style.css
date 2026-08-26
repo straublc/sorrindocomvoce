@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    SORRINDO COM VOCÊ — Premium Dental Clinic
    Design System & Landing Page Styles
    Mobile-first · Sophisticated · Editorial
@@ -176,7 +176,6 @@ address { font-style: normal; }
   max-width: var(--container-max);
   margin-inline: auto;
   padding-inline: var(--container-pad);
-  overflow-x: hidden;
 }
 
 /* ── 05. BOTÕES ─────────────────────────────────────────────── */
@@ -298,7 +297,7 @@ address { font-style: normal; }
 .header__nav-list {
   display: flex;
   align-items: center;
-  gap: var(--space-8);
+  gap: var(--space-6);
 }
 
 .header__nav-link {
@@ -627,8 +626,6 @@ address { font-style: normal; }
 .clinic {
   padding-block: var(--space-20);
   background-color: var(--color-bg);
-  content-visibility: auto;
-  contain-intrinsic-size: 0 600px;
 }
 .clinic__intro { margin-bottom: var(--space-12); }
 .clinic__heading {
@@ -711,8 +708,6 @@ address { font-style: normal; }
 .treatments {
   padding-block: var(--space-20);
   background-color: var(--color-bg-alt);
-  content-visibility: auto;
-  contain-intrinsic-size: 0 800px;
 }
 .treatments__header { margin-bottom: var(--space-12); }
 .treatments__heading {
@@ -846,8 +841,6 @@ address { font-style: normal; }
   background-color: var(--color-bg-dark);
   color: var(--color-text-inv);
   overflow: hidden;
-  content-visibility: auto;
-  contain-intrinsic-size: 0 600px;
 }
 .differentials__layout {
   display: flex;
@@ -912,8 +905,6 @@ address { font-style: normal; }
 .authority {
   padding-block: var(--space-20);
   background-color: var(--color-bg);
-  content-visibility: auto;
-  contain-intrinsic-size: 0 700px;
 }
 .authority__header { margin-bottom: var(--space-12); }
 .authority__heading {
@@ -1074,8 +1065,6 @@ address { font-style: normal; }
   padding-block: var(--space-20);
   background-color: var(--color-bg-alt);
   overflow: hidden;
-  content-visibility: auto;
-  contain-intrinsic-size: 0 480px;
 }
 .testimonials__header { margin-bottom: var(--space-12); }
 .testimonials__heading {
@@ -1193,7 +1182,101 @@ address { font-style: normal; }
   background-color: var(--color-text);
 }
 
-/* ── 14. CTA AGENDAMENTO ────────────────────────────────────── */
+/* ── 14. FAQ ────────────────────────────────────────────────── */
+.faq {
+  padding-block: var(--space-20);
+  background-color: var(--color-bg-alt);
+}
+
+.faq__header {
+  margin-bottom: var(--space-12);
+}
+
+.faq__heading {
+  font-family: var(--font-serif);
+  font-size: var(--text-3xl);
+  font-weight: 300;
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text);
+}
+
+.faq__list {
+  display: flex;
+  flex-direction: column;
+  max-width: 760px;
+}
+
+.faq__item {
+  border-top: 1px solid var(--color-border);
+}
+.faq__item:last-child {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.faq__btn {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-6) 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-serif);
+  font-size: var(--text-lg);
+  font-weight: 400;
+  line-height: var(--leading-snug);
+  color: var(--color-text);
+  letter-spacing: var(--tracking-tight);
+  transition: color var(--duration-fast) var(--ease-out);
+  -webkit-tap-highlight-color: transparent;
+}
+.faq__btn:hover {
+  color: var(--color-accent);
+}
+.faq__btn[aria-expanded="true"] {
+  color: var(--color-accent);
+}
+
+.faq__icon {
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: var(--color-accent);
+  transition: transform var(--duration-base) var(--ease-out);
+}
+.faq__btn[aria-expanded="true"] .faq__icon {
+  transform: rotate(45deg);
+}
+
+.faq__answer {
+  overflow: hidden;
+}
+.faq__answer[hidden] {
+  display: none;
+}
+
+.faq__answer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding-bottom: var(--space-6);
+}
+.faq__answer-inner p {
+  font-size: var(--text-base);
+  line-height: var(--leading-loose);
+  color: var(--color-text-muted);
+  text-align: justify;
+  hyphens: auto;
+}
+.faq__answer-inner strong {
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+/* ── 15. CTA AGENDAMENTO ────────────────────────────────────── */
 .booking-cta {
   padding-block: var(--space-20);
   background-color: var(--color-text);
@@ -1245,12 +1328,10 @@ address { font-style: normal; }
   }
 }
 
-/* ── 15. LOCALIZAÇÃO ────────────────────────────────────────── */
+/* ── 16. LOCALIZAÇÃO ────────────────────────────────────────── */
 .location {
   padding-block: var(--space-20);
   background-color: var(--color-bg);
-  content-visibility: auto;
-  contain-intrinsic-size: 0 600px;
 }
 .location__header { margin-bottom: var(--space-12); }
 .location__heading {

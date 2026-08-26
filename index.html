@@ -117,6 +117,7 @@
           <li><a href="#consultorio" class="header__nav-link">O consultório</a></li>
           <li><a href="#tratamentos" class="header__nav-link">Tratamentos</a></li>
           <li><a href="#doutor" class="header__nav-link">O doutor</a></li>
+          <li><a href="#faq" class="header__nav-link">FAQ</a></li>
           <li><a href="#localizacao" class="header__nav-link">Localização</a></li>
         </ul>
       </nav>
@@ -138,7 +139,7 @@
   <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menu de navegação">
     <div class="mobile-menu__inner">
       <nav class="mobile-menu__nav" aria-label="Navegação mobile">
-        <ul class="mobile-menu__list" role="list">
+                <ul class="mobile-menu__list" role="list">
           <li class="mobile-menu__item">
             <a href="#inicio" class="mobile-menu__link" data-close-menu>Início</a>
           </li>
@@ -150,6 +151,9 @@
           </li>
           <li class="mobile-menu__item">
             <a href="#doutor" class="mobile-menu__link" data-close-menu>O doutor</a>
+          </li>
+          <li class="mobile-menu__item">
+            <a href="#faq" class="mobile-menu__link" data-close-menu>Perguntas frequentes</a>
           </li>
           <li class="mobile-menu__item">
             <a href="#localizacao" class="mobile-menu__link" data-close-menu>Localização</a>
@@ -647,6 +651,165 @@
             </button>
           </div>
         </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================
+         FAQ
+    ========================================================= -->
+    <section class="faq" id="faq" aria-labelledby="faq-heading">
+      <div class="container">
+
+        <div class="faq__header reveal">
+          <span class="section-label">Dúvidas</span>
+          <h2 class="faq__heading" id="faq-heading">
+            Perguntas<br />frequentes.
+          </h2>
+        </div>
+
+        <dl class="faq__list reveal">
+
+          <div class="faq__item">
+            <dt class="faq__question">
+              <button
+                class="faq__btn"
+                aria-expanded="false"
+                aria-controls="faq-1"
+                id="faq-btn-1"
+              >
+                <span>É muito caro?</span>
+                <svg class="faq__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <line x1="12" y1="5" x2="12" y2="19"/>
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                </svg>
+              </button>
+            </dt>
+            <dd class="faq__answer" id="faq-1" role="region" aria-labelledby="faq-btn-1" hidden>
+              <div class="faq__answer-inner">
+                <p>Caro mesmo é deixar para depois e o problema piorar. Cada mês adiado aumenta o custo, a dor e a complexidade do tratamento.</p>
+                <p>Seu sorriso é seu cartão de visitas. Cuidar dele é um investimento na sua saúde, na sua autoestima e até na sua vida profissional.</p>
+                <p>Temos várias formas de pagamento e parcelamento. Fale agora no WhatsApp e descubra a opção que cabe no seu bolso.</p>
+              </div>
+            </dd>
+          </div>
+
+          <div class="faq__item">
+            <dt class="faq__question">
+              <button
+                class="faq__btn"
+                aria-expanded="false"
+                aria-controls="faq-2"
+                id="faq-btn-2"
+              >
+                <span>E se eu não conseguir encaixar a consulta na minha agenda?</span>
+                <svg class="faq__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <line x1="12" y1="5" x2="12" y2="19"/>
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                </svg>
+              </button>
+            </dt>
+            <dd class="faq__answer" id="faq-2" role="region" aria-labelledby="faq-btn-2" hidden>
+              <div class="faq__answer-inner">
+                <p>Entendemos que sua rotina é corrida. Mas um sorriso bonito e saudável faz diferença todos os dias, na impressão que você causa, na sua confiança e na sua autoestima.</p>
+                <p>Depois que estiver com o sorriso que sempre quis, nos conta se valeu separar aquele tempinho para cuidar de você.</p>
+              </div>
+            </dd>
+          </div>
+
+          <div class="faq__item">
+            <dt class="faq__question">
+              <button
+                class="faq__btn"
+                aria-expanded="false"
+                aria-controls="faq-3"
+                id="faq-btn-3"
+              >
+                <span>Tive uma experiência ruim em outra clínica. E se isso acontecer de novo?</span>
+                <svg class="faq__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <line x1="12" y1="5" x2="12" y2="19"/>
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                </svg>
+              </button>
+            </dt>
+            <dd class="faq__answer" id="faq-3" role="region" aria-labelledby="faq-btn-3" hidden>
+              <div class="faq__answer-inner">
+                <p>Sabemos que experiências ruins deixam marcas. Por isso fazemos questão de ser diferentes. Enquanto muitas clínicas tratam pacientes como números, aqui você é tratado como família.</p>
+                <p>Mais de 145 avaliações com nota 5,0 no Google não mentem. Dá uma olhada e tire suas próprias conclusões.</p>
+              </div>
+            </dd>
+          </div>
+
+          <div class="faq__item">
+            <dt class="faq__question">
+              <button
+                class="faq__btn"
+                aria-expanded="false"
+                aria-controls="faq-4"
+                id="faq-btn-4"
+              >
+                <span>Tenho vergonha da minha boca. E se me julgarem?</span>
+                <svg class="faq__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <line x1="12" y1="5" x2="12" y2="19"/>
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                </svg>
+              </button>
+            </dt>
+            <dd class="faq__answer" id="faq-4" role="region" aria-labelledby="faq-btn-4" hidden>
+              <div class="faq__answer-inner">
+                <p>Muitos dos nossos pacientes chegaram exatamente assim, escondendo o sorriso, sem coragem de marcar a consulta. Hoje saem transformados, sorrindo com confiança.</p>
+                <p>Aqui ninguém julga. Você será tratado com respeito, carinho e empatia, do início ao fim. Marque sua avaliação sem medo.</p>
+              </div>
+            </dd>
+          </div>
+
+          <div class="faq__item">
+            <dt class="faq__question">
+              <button
+                class="faq__btn"
+                aria-expanded="false"
+                aria-controls="faq-5"
+                id="faq-btn-5"
+              >
+                <span>Vai doer?</span>
+                <svg class="faq__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <line x1="12" y1="5" x2="12" y2="19"/>
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                </svg>
+              </button>
+            </dt>
+            <dd class="faq__answer" id="faq-5" role="region" aria-labelledby="faq-btn-5" hidden>
+              <div class="faq__answer-inner">
+                <p>Medo de dor é muito mais comum do que você imagina. Com as técnicas e anestesias modernas que usamos, o desconforto é mínimo ou inexistente.</p>
+                <p>A maioria dos nossos pacientes sai dizendo: "Nem senti nada!". Priorizamos seu bem-estar em todos os momentos. Pode vir sem medo.</p>
+              </div>
+            </dd>
+          </div>
+
+          <div class="faq__item">
+            <dt class="faq__question">
+              <button
+                class="faq__btn"
+                aria-expanded="false"
+                aria-controls="faq-6"
+                id="faq-btn-6"
+              >
+                <span>Quais planos vocês aceitam?</span>
+                <svg class="faq__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <line x1="12" y1="5" x2="12" y2="19"/>
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                </svg>
+              </button>
+            </dt>
+            <dd class="faq__answer" id="faq-6" role="region" aria-labelledby="faq-btn-6" hidden>
+              <div class="faq__answer-inner">
+                <p>Atualmente trabalhamos com o plano <strong>Amil Dental</strong>. Para os demais casos, oferecemos pagamento particular com parcelamento facilitado.</p>
+                <p>Fale com a gente pelo WhatsApp para encontrar a melhor forma de cuidar do seu sorriso dentro do seu orçamento.</p>
+              </div>
+            </dd>
+          </div>
+
+        </dl>
 
       </div>
     </section>
