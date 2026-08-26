@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTestimonialsCarousel();
   initNavHighlight();
   initCurrentYear();
+  initTreatmentAccordion();
 });
 
 /* ── HEADER ─────────────────────────────────────────────────── */
@@ -298,4 +299,33 @@ function initNavHighlight() {
 function initCurrentYear() {
   const el = $('#currentYear');
   if (el) el.textContent = new Date().getFullYear();
+}
+
+/* ── TREATMENT ACCORDION (touch + click) ───────────────────── */
+function initTreatmentAccordion() {
+  const items = $$('.treatment-item');
+  if (!items.length) return;
+
+  items.forEach(item => {
+    item.addEventListener('click', () => {
+      const isOpen = item.classList.contains('is-open');
+
+      // Fechar todos os outros
+      items.forEach(other => {
+        if (other !== item) other.classList.remove('is-open');
+      });
+
+      // Alternar o atual
+      item.classList.toggle('is-open', !isOpen);
+    });
+
+    // Acessibilidade: teclado
+    item.setAttribute('tabindex', '0');
+    item.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        item.click();
+      }
+    });
+  });
 }
